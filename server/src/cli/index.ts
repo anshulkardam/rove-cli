@@ -4,6 +4,7 @@ import { Command } from "commander";
 import chalk from "chalk";
 import figlet from "figlet";
 import { login, logout, whoami } from "./commands/auth/login";
+import { start } from "./commands/ai/start";
 
 async function main() {
   console.log(
@@ -24,7 +25,8 @@ async function main() {
     .description("Rove CLI - A CLI Based AI Tool")
     .addCommand(login)
     .addCommand(logout)
-    .addCommand(whoami);
+    .addCommand(whoami)
+    .addCommand(start)
 
   program.action(() => {
     program.help();
